@@ -9,11 +9,15 @@ public abstract class Duck {
     private State state = State.SWIMMING;
     private boolean isFree = true;
     private boolean isOnDSWC = false;
-    
+
+    private FlyBehavior defaultFlyBehavior;
+    private FlyBehavior currentFlyBehavior;
+
+
     // typical duck commands
     
     public void swim() {
-        state = State.SWIMMING;
+        currentFlyBehavior = new FlyNoWay();
     }
     
     public void quack() {
@@ -25,17 +29,13 @@ public abstract class Duck {
     }
     
     public void fly() {
-        state = State.FLYING;
+        currentFlyBehavior = defaultFlyBehavior;
     }
     
     public State getState() {
-        return state;
+        return currentFlyBehavior.getFlyBehavior() ;
     }
-    
-    public void setState(State state) {
-        this.state = state;
-    }
-    
+
     public void setColor(Color c) {
         color = c;
     }
@@ -71,5 +71,10 @@ public abstract class Duck {
     }
     
     public abstract String display();
-    
+
+    public void setDefaultFlyBehavior(FlyBehavior flyBehavior) {  defaultFlyBehavior = flyBehavior; }
+
+    public void setCurrentFlyBehavior(FlyBehavior flyBehavior) {  currentFlyBehavior = flyBehavior; }
+
+
 }

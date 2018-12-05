@@ -191,7 +191,9 @@ public class DuckSimView extends JPanel {
 		// Paint the body of the square.
 		// If the duck is selected, paint it black, otherwise paint it white.
 		if (model.isSelected(pos)) {
-			g.setColor(Color.BLACK);
+
+
+			g.setColor(model.getDuck(pos).getColor());
 		} else {
 			g.setColor(Color.WHITE);
 		}
@@ -229,6 +231,7 @@ public class DuckSimView extends JPanel {
 
 		// If the duck is selected, make the text white, otherwise make it black.
 		if (model.isSelected(pos)) {
+
 			g.setColor(Color.WHITE);
 		} else {
 			g.setColor(Color.BLACK);
