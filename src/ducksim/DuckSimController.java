@@ -63,7 +63,7 @@ public class DuckSimController implements MouseListener {
                 model.setCurrentDuck(d);
 
 
-
+                System.out.println(model.getDuck(d).getState());
 
                 // If the mouse click is over a duck AND the duck is SWIMMING
                 // (not FLYING and not QUACKING), construct the popup menu
@@ -85,8 +85,10 @@ public class DuckSimController implements MouseListener {
                     menuItem = new JMenuItem("Quack");
                     menuItem.addActionListener(e1 -> {
                         model.getDuck(d).quack();
+
                         if (model.getDuck(d).getState() == State.QUACKING) {
                             view.getQuackTimer().start();
+
                         }
                     });
                     view.getPopup().add(menuItem);
@@ -165,6 +167,7 @@ public class DuckSimController implements MouseListener {
             int idx = view.getClickedDuck(e);
             if (idx == -1) { // no duck was clicked
                 if (view.clickedNewDuckButton(e)) {
+
                     Duck duck;
                     MakeDuckDialog makeDuckDialog = new MakeDuckDialog(model, view);
                     makeDuckDialog.setSize(300, 200);

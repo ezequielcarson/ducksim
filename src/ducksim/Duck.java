@@ -14,28 +14,48 @@ public abstract class Duck {
     private FlyBehavior currentFlyBehavior;
     private FlyBehavior defaultFlyBehavior;
 
+    private QuackBehavior defaultQuackBehavior;
+    private QuackBehavior currentQuackBehavior;
+
+
+    protected Duck(Color color, FlyBehavior currentFlyBehavior, FlyBehavior defaultFlyBehavior, QuackBehavior defaultQuackBehavior ) {
+        this.color = color;
+        this.currentFlyBehavior = currentFlyBehavior;
+        this.defaultFlyBehavior = defaultFlyBehavior;
+        this.currentQuackBehavior = new QuackNoWay();
+        this.defaultQuackBehavior = defaultQuackBehavior;
+
+    }
+
 
     // typical duck commands
     
     public void swim() {
+
         currentFlyBehavior = new FlyNoWay();
+        currentQuackBehavior = new QuackNoWay();
+        state = State.SWIMMING;
     }
     
     public void quack() {
 
-        state = State.QUACKING;
+        currentQuackBehavior = defaultQuackBehavior;
+        state = currentQuackBehavior.getQuackBehavior();
+
     }
     
     public String getQuack() {
-        return "Quack!";
+        return currentQuackBehavior.getQuack();
     }
     
     public void fly() {
+
         currentFlyBehavior = defaultFlyBehavior;
+        state = currentFlyBehavior.getFlyBehavior();
     }
     
     public State getState() {
-        return currentFlyBehavior.getFlyBehavior() ;
+        return state;
     }
 
     public void setColor(Color c) {
@@ -79,10 +99,5 @@ public abstract class Duck {
     }
     
     public abstract String display();
-
-    public void setDefaultFlyBehavior(FlyBehavior flyBehavior) {  defaultFlyBehavior = flyBehavior; }
-
-    public void setCurrentFlyBehavior(FlyBehavior flyBehavior) {  currentFlyBehavior = flyBehavior; }
-
 
 }

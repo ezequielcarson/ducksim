@@ -103,10 +103,16 @@ public class DuckSimView extends JPanel {
 	
 	// Paint the quacking duck animation.
 	public void paintQuack(Graphics g) {
+
+
+
 		int currentDuck = model.getCurrentDuck();
+
 		if (currentDuck == -1 || !quackTimer.isRunning()) {
 			return;
 		}
+
+
 		g.setColor(Color.BLACK);
 
 		String quack = model.getDuck(currentDuck).getQuack();

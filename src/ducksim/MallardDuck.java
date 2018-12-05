@@ -6,9 +6,7 @@ import java.awt.Color;
 public class MallardDuck extends Duck {
 
     public MallardDuck() {
-        setColor(Color.GREEN);
-        setDefaultFlyBehavior(new FlyWithWings());
-        setCurrentFlyBehavior(new FlyNoWay());
+        super(Color.GREEN, new FlyNoWay(), new FlyWithWings(), new QuackNormal());
     }
     
     @Override
