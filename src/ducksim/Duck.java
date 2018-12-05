@@ -10,8 +10,9 @@ public abstract class Duck {
     private boolean isFree = true;
     private boolean isOnDSWC = false;
 
-    private FlyBehavior defaultFlyBehavior;
+    private FlyBehavior previousFlyBehavior;
     private FlyBehavior currentFlyBehavior;
+    private FlyBehavior defaultFlyBehavior;
 
 
     // typical duck commands
@@ -21,6 +22,7 @@ public abstract class Duck {
     }
     
     public void quack() {
+
         state = State.QUACKING;
     }
     
@@ -59,10 +61,16 @@ public abstract class Duck {
     }
     
     public void capture() {
+
+        previousFlyBehavior = defaultFlyBehavior;
+        defaultFlyBehavior = new FlyNoWay();
         isFree = false;
     }
     
     public void release() {
+
+        defaultFlyBehavior = previousFlyBehavior;
+        previousFlyBehavior = null;
         isFree = true;
     }
     

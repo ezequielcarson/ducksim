@@ -63,7 +63,7 @@ public class DuckSimController implements MouseListener {
                 model.setCurrentDuck(d);
 
 
-                System.out.println(model.getDuck(d).getState());
+
 
                 // If the mouse click is over a duck AND the duck is SWIMMING
                 // (not FLYING and not QUACKING), construct the popup menu
