@@ -1,0 +1,23 @@
+Que poner en el fly behavior
+
+debemos tener flyBehavior
+
+No debemos tener ningun IF en la implementacion Duck
+
+
+DECORATOR
+---------------
+
+A Decorator es escencialemente un Wrapper
+
+Bling, es un TIPO DE DUCK pero tambien va a CONTENER un DUCK.
+Asi como el condomintDecorator es un tipo de Beverage pero tambien contiene un Beverage
+Entonces si es un HAS-A implica tener una variable private
+Entonces si es un IS-A implica EXTENDS
+
+Bling extiende duck y tene una variable qeu se llama Duck
+
+Es posible qeu tengamos efectos raros cuando tengamos Bling.
+
+para esto podemos hacer override fly y asi llamar al super o duck.fly()
+
