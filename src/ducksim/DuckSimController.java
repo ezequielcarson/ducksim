@@ -163,6 +163,8 @@ public class DuckSimController implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
+
         if (SwingUtilities.isLeftMouseButton(e)) {
             int idx = view.getClickedDuck(e);
             if (idx == -1) { // no duck was clicked
@@ -170,7 +172,8 @@ public class DuckSimController implements MouseListener {
 
                     Duck duck;
                     MakeDuckDialog makeDuckDialog = new MakeDuckDialog(model, view);
-                    makeDuckDialog.setSize(300, 200);
+                    makeDuckDialog.setSize(200, 200);
+                    makeDuckDialog.setResizable(false);
                     makeDuckDialog.setVisible(true);
                 }
             } else {
