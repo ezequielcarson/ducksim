@@ -11,5 +11,5 @@ public class DecoyDuck extends Duck {
     }
 
     @Override
-    public String display() { return "Decoy!"; }
+    public String display() { return "Decoy"; }
 }

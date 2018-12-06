@@ -108,7 +108,12 @@ public abstract class Duck {
     public boolean isFree() {
         return isFree;
     }
-    
+
+
+    public FlyBehavior getDefaultFlyBehavior() { return defaultFlyBehavior; }
+
+    public QuackBehavior getDefaultQuackBehavior() { return defaultQuackBehavior; }
+
     public abstract String display();
 
 }
