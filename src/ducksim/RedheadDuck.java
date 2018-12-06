@@ -6,7 +6,7 @@ import java.awt.Color;
 public class RedheadDuck extends Duck {
     
     public RedheadDuck() {
-        super(Color.RED, new FlyNoWay(), new FlyWithWings(), new QuackNormal());
+        super(Color.RED, new FlyWithWings(), new QuackNormal());
     }
     
     @Override

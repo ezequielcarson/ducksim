@@ -61,6 +61,9 @@ public class MakeDuckDialog extends JDialog {
                 case "Rubber":
                     duck = new RubberDuck();
                     break;
+                case "Decoy":
+                    duck = new DecoyDuck();
+                    break;
                 default:
                     duck = null;
             }

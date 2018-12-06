@@ -16,12 +16,15 @@ public abstract class Duck {
 
     private QuackBehavior defaultQuackBehavior;
     private QuackBehavior currentQuackBehavior;
+    private QuackBehavior previousQuackBehavior;
 
 
-    protected Duck(Color color, FlyBehavior currentFlyBehavior, FlyBehavior defaultFlyBehavior, QuackBehavior defaultQuackBehavior ) {
+    protected Duck(Color color, FlyBehavior defaultFlyBehavior, QuackBehavior defaultQuackBehavior ) {
         this.color = color;
-        this.currentFlyBehavior = currentFlyBehavior;
+
+        this.currentFlyBehavior = new FlyNoWay();
         this.defaultFlyBehavior = defaultFlyBehavior;
+
         this.currentQuackBehavior = new QuackNoWay();
         this.defaultQuackBehavior = defaultQuackBehavior;
 
@@ -84,6 +87,10 @@ public abstract class Duck {
 
         previousFlyBehavior = defaultFlyBehavior;
         defaultFlyBehavior = new FlyNoWay();
+
+        previousQuackBehavior = defaultQuackBehavior;
+        defaultQuackBehavior = new QuackNoWay();
+
         isFree = false;
     }
     
@@ -91,6 +98,10 @@ public abstract class Duck {
 
         defaultFlyBehavior = previousFlyBehavior;
         previousFlyBehavior = null;
+
+        defaultQuackBehavior = previousQuackBehavior;
+        previousFlyBehavior = null;
+
         isFree = true;
     }
     
