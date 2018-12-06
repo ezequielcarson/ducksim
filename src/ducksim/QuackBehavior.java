@@ -2,7 +2,6 @@ package ducksim;
 
 public abstract class QuackBehavior {
 
-
     private String quackString;
     private State quackBehavior;
 
@@ -10,7 +9,6 @@ public abstract class QuackBehavior {
         quackString = tempString;
         quackBehavior = tempBehavior;
     }
-
 
     public String getQuack() {
         return quackString;
