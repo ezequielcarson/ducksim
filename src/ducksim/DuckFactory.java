@@ -33,6 +33,10 @@ public class DuckFactory {
             case "Decoy":
                 duck = new DecoyDuck();
                 break;
+            case "Goose":
+                Goose goose = new Goose();
+                duck = new GooseDuck(goose);
+                break;
             default:
                 duck = null;
         }

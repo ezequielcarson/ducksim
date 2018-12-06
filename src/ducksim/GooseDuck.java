@@ -8,12 +8,17 @@ public class GooseDuck extends Duck {
 
 
     protected GooseDuck(Goose goose) {
-        super(Color.BLUE,  new FlyNoWay(), new QuackNormal());
+        super(Color.BLUE,  new FlyWithWings(), new QuackNormal());
         this.goose = goose;
     }
 
+    
     @Override
-    public String getQuack() { return goose.getHonk(); }
+    public String getQuack() {
+
+        System.out.println("GOOSE QUACK");
+        return goose.getHonk();
+    }
 
     @Override
     public String display() { return goose.getName(); }

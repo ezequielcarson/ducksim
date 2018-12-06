@@ -17,7 +17,7 @@ public class MakeDuckDialog extends JDialog {
     // Duck panel
     private final JPanel duckPanel = new JPanel();
     private final JLabel duckLabel = new JLabel("Duck");
-    private final String[] duckStrings = {"Mallard", "Redhead", "Rubber", "Decoy"};
+    private final String[] duckStrings = {"Mallard", "Redhead", "Rubber", "Decoy", "Goose"};
     private final JComboBox duckOptions = new JComboBox(duckStrings);
 
     //Bling panel
